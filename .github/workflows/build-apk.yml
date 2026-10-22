@@ -18,7 +18,7 @@ jobs:
       - name: Preparar projeto
         run: |
           mkdir -p www
-          cp telao-index.html www/index.html
+          cp "$(ls *.html | head -n 1)" www/index.html
           npm init -y
           npm install @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
           npx cap init "Telão" com.telao.app --web-dir www
